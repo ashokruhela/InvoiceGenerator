@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="InvoiceGenerator.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="OutputPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E:\projects\windows\InvoiceGenerator\Soft conditon\Generated</Value>
+    </Setting>
+    <Setting Name="Shopon_P" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E:\projects\windows\InvoiceGenerator\InvoiceGenerator\Images\Shopon4uPvtLtd_Logo.png</Value>
+    </Setting>
+    <Setting Name="Shopon_M" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E:\projects\windows\InvoiceGenerator\InvoiceGenerator\Images\Shopon4uMarketing_Logo.png</Value>
+    </Setting>
+    <Setting Name="ContestName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SPL Contest</Value>
+    </Setting>
+    <Setting Name="FolderNameFormat" Type="System.String" Scope="User">
+      <Value Profile="(Default)">dd-MM-yyyy</Value>
+    </Setting>
+    <Setting Name="BackColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="CustCareNo" Type="System.String" Scope="User">
+      <Value Profile="(Default)"> 0958-222-8289</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,13 @@
+E:\projects\windows\InvoiceGenerator\InvoiceGenerator\bin\Release\Images\Shopon4uPvtLtd_Logo.png
+E:\projects\windows\InvoiceGenerator\InvoiceGenerator\bin\Release\Images\Shopon4uMarketing_Logo.png
+E:\projects\windows\InvoiceGenerator\InvoiceGenerator\bin\Release\InvoiceGenerator.exe.config
+E:\projects\windows\InvoiceGenerator\InvoiceGenerator\bin\Release\InvoiceGenerator.exe
+E:\projects\windows\InvoiceGenerator\InvoiceGenerator\bin\Release\InvoiceGenerator.pdb
+E:\projects\windows\InvoiceGenerator\InvoiceGenerator\obj\Release\InvoiceGenerator.csproj.ResolveComReference.cache
+E:\projects\windows\InvoiceGenerator\InvoiceGenerator\obj\Release\InvoiceGenerator.frmConfigurations.resources
+E:\projects\windows\InvoiceGenerator\InvoiceGenerator\obj\Release\InvoiceGenerator.frmInvoiceGen.resources
+E:\projects\windows\InvoiceGenerator\InvoiceGenerator\obj\Release\InvoiceGenerator.Properties.Resources.resources
+E:\projects\windows\InvoiceGenerator\InvoiceGenerator\obj\Release\InvoiceGenerator.csproj.GenerateResource.Cache
+E:\projects\windows\InvoiceGenerator\InvoiceGenerator\obj\Release\InvoiceGenerator.exe
+E:\projects\windows\InvoiceGenerator\InvoiceGenerator\obj\Release\InvoiceGenerator.pdb
+E:\projects\windows\InvoiceGenerator\InvoiceGenerator\obj\Release\InvoiceGenerator.csprojResolveAssemblyReference.cache
