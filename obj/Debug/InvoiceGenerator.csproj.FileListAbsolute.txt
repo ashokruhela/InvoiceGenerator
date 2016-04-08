@@ -23,3 +23,15 @@ E:\projects\windows\InvoiceGenerator\InvoiceGenerator\bin\Debug\Images\Shopon4uP
 E:\projects\windows\InvoiceGenerator\InvoiceGenerator\bin\Debug\Images\Shopon4uMarketing_Logo.png
 E:\projects\windows\InvoiceGenerator\InvoiceGenerator\obj\Debug\InvoiceGenerator.csprojResolveAssemblyReference.cache
 E:\projects\windows\InvoiceGenerator\InvoiceGenerator\obj\Debug\InvoiceGenerator.frmConfigurations.resources
+D:\projects\windows\InvoiceGenerator\bin\Debug\Images\Shopon4uPvtLtd_Logo.png
+D:\projects\windows\InvoiceGenerator\bin\Debug\Images\Shopon4uMarketing_Logo.png
+D:\projects\windows\InvoiceGenerator\bin\Debug\InvoiceGenerator.exe.config
+D:\projects\windows\InvoiceGenerator\bin\Debug\InvoiceGenerator.exe
+D:\projects\windows\InvoiceGenerator\bin\Debug\InvoiceGenerator.pdb
+D:\projects\windows\InvoiceGenerator\obj\Debug\InvoiceGenerator.csproj.ResolveComReference.cache
+D:\projects\windows\InvoiceGenerator\obj\Debug\InvoiceGenerator.frmConfigurations.resources
+D:\projects\windows\InvoiceGenerator\obj\Debug\InvoiceGenerator.frmInvoiceGen.resources
+D:\projects\windows\InvoiceGenerator\obj\Debug\InvoiceGenerator.Properties.Resources.resources
+D:\projects\windows\InvoiceGenerator\obj\Debug\InvoiceGenerator.csproj.GenerateResource.Cache
+D:\projects\windows\InvoiceGenerator\obj\Debug\InvoiceGenerator.exe
+D:\projects\windows\InvoiceGenerator\obj\Debug\InvoiceGenerator.pdb

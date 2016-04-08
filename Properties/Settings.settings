@@ -6,10 +6,10 @@
       <Value Profile="(Default)">E:\projects\windows\InvoiceGenerator\Soft conditon\Generated</Value>
     </Setting>
     <Setting Name="Shopon_P" Type="System.String" Scope="User">
-      <Value Profile="(Default)">E:\projects\windows\InvoiceGenerator\InvoiceGenerator\Images\Shopon4uPvtLtd_Logo.png</Value>
+      <Value Profile="(Default)">Shopon4uPvtLtd_Logo.png</Value>
     </Setting>
     <Setting Name="Shopon_M" Type="System.String" Scope="User">
-      <Value Profile="(Default)">E:\projects\windows\InvoiceGenerator\InvoiceGenerator\Images\Shopon4uMarketing_Logo.png</Value>
+      <Value Profile="(Default)">Shopon4uMarketing_Logo.png</Value>
     </Setting>
     <Setting Name="ContestName" Type="System.String" Scope="User">
       <Value Profile="(Default)">SPL Contest</Value>

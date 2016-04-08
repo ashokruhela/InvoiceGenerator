@@ -178,6 +178,7 @@ namespace InvoiceGenerator
         {
             return Task.Run(() =>
             {
+                bool invoiceGenerated = true;
                 Excel.Application excelApp = null;
                 List<string> invoices = new List<string>();
                 try
@@ -300,19 +301,35 @@ namespace InvoiceGenerator
                         //company logo
                         string logoInfo = GetColumnValue(row, Constants.ModeOfPayment);
                         range = newWorkSheet.get_Range("A3");
-                        if (logoInfo.Trim().ToUpper() == "NEFT (ICICI)")
+                        try
                         {
-                            //marketing
-                            isPvtLtd = false;
-                            range.Value2 = "Shopon Marketing";
-                            newWorkSheet.Shapes.AddPicture(Constants.Shopon_M, MsoTriState.msoFalse, MsoTriState.msoCTrue, 210, 30, 220, 60);
+                            if (logoInfo.Trim().ToUpper() == "NEFT (ICICI)")
+                            {
+                                //marketing
+                                isPvtLtd = false;
+                                range.Value2 = "Shopon Marketing";
+                                newWorkSheet.Shapes.AddPicture(Constants.Shopon_M, MsoTriState.msoFalse, MsoTriState.msoCTrue, 210, 30, 220, 60);
+                            }
+                            else
+                            {
+                                //Private limited
+                                isPvtLtd = true;
+                                range.Value2 = "Shopon Marketing Pvt Ltd.";
+                                newWorkSheet.Shapes.AddPicture(Constants.Shopon_P, MsoTriState.msoFalse, MsoTriState.msoCTrue, 230, 40, 180, 50);
+                            }
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            //Private limited
-                            isPvtLtd = true;
-                            range.Value2 = "Shopon Marketing Pvt Ltd.";
-                            newWorkSheet.Shapes.AddPicture(Constants.Shopon_P, MsoTriState.msoFalse, MsoTriState.msoCTrue, 230, 40, 180, 50);
+
+                            if (System.Windows.Forms.MessageBox.Show("Failed to find the company logo images. Make sure files are present there.\n Would you like to generate without logo",
+                                "Error occured", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Error) == System.Windows.Forms.DialogResult.No)
+                            {
+                                invoiceGenerated = false;
+                                newWorkBook.Close(false, misValue, misValue);
+                                Marshal.ReleaseComObject(newWorkSheet);
+                                Marshal.ReleaseComObject(newWorkBook);
+                                break;
+                            }
                         }
                         range.Font.Bold = true;
                         range.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
@@ -876,7 +893,7 @@ namespace InvoiceGenerator
                     }
                     catch { }
                 }
-                return true;
+                return invoiceGenerated;
             });
         }
 

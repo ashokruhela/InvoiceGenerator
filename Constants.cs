@@ -8,7 +8,7 @@ namespace InvoiceGenerator
 {
     class Constants
     {
-        public static readonly string OutputFilePath = string.Empty;
+        public static string OutputFilePath = string.Empty;
         public static readonly string CustomerName = "Customer Name";
         public static readonly string ModeOfPayment = "Mode of Payment";
         public static readonly string OrderDate = "Order Date";
@@ -29,20 +29,25 @@ namespace InvoiceGenerator
         public static readonly string Products = "Products";
         public static readonly string ExcluceInvoice = "Exclude";
         public static readonly string Skip = "Skip";
-        public static readonly string ContestName = "SPL Contest";
-        public static readonly string FolderNameFormat = "dd-MM-yyyy";
+        public static string ContestName = "SPL Contest";
+        public static string FolderNameFormat = "dd-MM-yyyy";
         public static readonly string AlternameNumber = "Alternate Number";
         public static readonly string Shipping = "Shipping";
-        public static readonly string CustCareNumber = "";
+        public static string CustCareNumber = "";
         //
         
-        public static readonly string Shopon_P = string.Empty;
-        public static readonly string Shopon_M = string.Empty;
+        public static string Shopon_P = string.Empty;
+        public static string Shopon_M = string.Empty;
 
         static Constants()
         {
-            Shopon_P = Properties.Settings.Default.Shopon_P;
-            Shopon_M = Properties.Settings.Default.Shopon_M;
+            LoadSettings();
+        }
+
+        public static void LoadSettings()
+        {
+            Shopon_P = Environment.CurrentDirectory + "\\images\\" + Properties.Settings.Default.Shopon_P;
+            Shopon_M = Environment.CurrentDirectory + "\\images\\" + Properties.Settings.Default.Shopon_M;
             OutputFilePath = Properties.Settings.Default.OutputPath;
             FolderNameFormat = Properties.Settings.Default.FolderNameFormat;
             ContestName = Properties.Settings.Default.ContestName;

@@ -43,7 +43,8 @@ namespace InvoiceGenerator
                     Properties.Settings.Default.CustCareNo = txtCustNo.Text.Trim();
 
                     Properties.Settings.Default.Save();
-                    MessageBox.Show("Setting saved successfully. Restart the application to make them effective", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Constants.LoadSettings();
+                    MessageBox.Show("Setting saved successfully", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
