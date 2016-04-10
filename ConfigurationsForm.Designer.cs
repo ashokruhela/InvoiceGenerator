@@ -39,6 +39,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtCustNo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.chkStylelobyInvoice = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnSave
@@ -58,13 +60,13 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 1;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "Close";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 62);
+            this.label1.Location = new System.Drawing.Point(34, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 2;
@@ -72,7 +74,7 @@
             // 
             // txtOutputPath
             // 
-            this.txtOutputPath.Location = new System.Drawing.Point(169, 54);
+            this.txtOutputPath.Location = new System.Drawing.Point(169, 63);
             this.txtOutputPath.Name = "txtOutputPath";
             this.txtOutputPath.ReadOnly = true;
             this.txtOutputPath.Size = new System.Drawing.Size(267, 20);
@@ -80,7 +82,7 @@
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(442, 51);
+            this.btnBrowse.Location = new System.Drawing.Point(442, 60);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(31, 23);
             this.btnBrowse.TabIndex = 4;
@@ -136,6 +138,26 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Customer Care No";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Enabled = false;
+            this.label5.Location = new System.Drawing.Point(166, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(317, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "This setting will change the comany, Check all the setting properly";
+            // 
+            // chkStylelobyInvoice
+            // 
+            this.chkStylelobyInvoice.AutoSize = true;
+            this.chkStylelobyInvoice.Location = new System.Drawing.Point(169, 12);
+            this.chkStylelobyInvoice.Name = "chkStylelobyInvoice";
+            this.chkStylelobyInvoice.Size = new System.Drawing.Size(106, 17);
+            this.chkStylelobyInvoice.TabIndex = 12;
+            this.chkStylelobyInvoice.Text = "Styleloby Invoice";
+            this.chkStylelobyInvoice.UseVisualStyleBackColor = true;
+            // 
             // frmConfigurations
             // 
             this.AcceptButton = this.btnSave;
@@ -144,6 +166,8 @@
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(509, 320);
             this.ControlBox = false;
+            this.Controls.Add(this.chkStylelobyInvoice);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtCustNo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtFormat);
@@ -177,5 +201,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCustNo;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox chkStylelobyInvoice;
     }
 }

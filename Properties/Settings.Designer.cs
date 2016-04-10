@@ -106,5 +106,29 @@ namespace InvoiceGenerator.Properties {
                 this["CustCareNo"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Styleloby {
+            get {
+                return ((bool)(this["Styleloby"]));
+            }
+            set {
+                this["Styleloby"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("styleloby_Logo.png")]
+        public string StylelobyLogo {
+            get {
+                return ((string)(this["StylelobyLogo"]));
+            }
+            set {
+                this["StylelobyLogo"] = value;
+            }
+        }
     }
 }

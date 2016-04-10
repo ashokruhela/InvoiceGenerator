@@ -38,20 +38,26 @@ namespace InvoiceGenerator
         
         public static string Shopon_P = string.Empty;
         public static string Shopon_M = string.Empty;
+        public static string StylelobyLogo = "styleloby_Logo.png";
+        public static bool IsStyleloby = false;
 
         static Constants()
         {
+            Shopon_P = Environment.CurrentDirectory + "\\images\\" + Properties.Settings.Default.Shopon_P;
+            Shopon_M = Environment.CurrentDirectory + "\\images\\" + Properties.Settings.Default.Shopon_M;
+            StylelobyLogo = Environment.CurrentDirectory + "\\images\\" + Properties.Settings.Default.StylelobyLogo;
+            
             LoadSettings();
         }
 
         public static void LoadSettings()
         {
-            Shopon_P = Environment.CurrentDirectory + "\\images\\" + Properties.Settings.Default.Shopon_P;
-            Shopon_M = Environment.CurrentDirectory + "\\images\\" + Properties.Settings.Default.Shopon_M;
+            
             OutputFilePath = Properties.Settings.Default.OutputPath;
             FolderNameFormat = Properties.Settings.Default.FolderNameFormat;
             ContestName = Properties.Settings.Default.ContestName;
             CustCareNumber = Properties.Settings.Default.CustCareNo;
+            IsStyleloby = Properties.Settings.Default.Styleloby;
         }
         
     }

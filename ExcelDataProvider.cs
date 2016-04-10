@@ -196,6 +196,9 @@ namespace InvoiceGenerator
                         excelApp = new Excel.Application();
                         excelApp.Visible = false;
                         object misValue = System.Reflection.Missing.Value;
+                        string supportEmail = @"info@shopon4u.com";
+                        string companyTinNumber = string.Empty;
+                        string website = "www.shopon4u.com";
 
                         #region Set Border
                         Excel.Workbook newWorkBook = excelApp.Workbooks.Add(misValue);
@@ -303,9 +306,20 @@ namespace InvoiceGenerator
                         range = newWorkSheet.get_Range("A3");
                         try
                         {
-                            if (logoInfo.Trim().ToUpper() == "NEFT (ICICI)")
+                            if(Constants.IsStyleloby)
+                            {
+                                //styleloby
+                                companyTinNumber = @"Company's TIN/VAT no :- 07606952779";
+                                supportEmail = @"info@styleloby.com";
+                                website = "www.styleloby.com";
+                                isPvtLtd = true;
+                                range.Value2 = "JMR Enterprises";
+                                newWorkSheet.Shapes.AddPicture(Constants.StylelobyLogo, MsoTriState.msoFalse, MsoTriState.msoCTrue, 230, 40, 180, 50);
+                            }
+                            else if (logoInfo.Trim().ToUpper() == "NEFT (ICICI)")
                             {
                                 //marketing
+                                companyTinNumber = @"Company's TIN/VAT no :- 07706906681";
                                 isPvtLtd = false;
                                 range.Value2 = "Shopon Marketing";
                                 newWorkSheet.Shapes.AddPicture(Constants.Shopon_M, MsoTriState.msoFalse, MsoTriState.msoCTrue, 210, 30, 220, 60);
@@ -313,12 +327,13 @@ namespace InvoiceGenerator
                             else
                             {
                                 //Private limited
+                                companyTinNumber = @"Company's TIN/VAT no :- 07436920749";
                                 isPvtLtd = true;
                                 range.Value2 = "Shopon Marketing Pvt Ltd.";
                                 newWorkSheet.Shapes.AddPicture(Constants.Shopon_P, MsoTriState.msoFalse, MsoTriState.msoCTrue, 230, 40, 180, 50);
                             }
                         }
-                        catch (Exception ex)
+                        catch (Exception)
                         {
 
                             if (System.Windows.Forms.MessageBox.Show("Failed to find the company logo images. Make sure files are present there.\n Would you like to generate without logo",
@@ -348,8 +363,8 @@ namespace InvoiceGenerator
                         //tin number
                         range = newWorkSheet.get_Range("A6");
                         range.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
-                        newWorkSheet.Hyperlinks.Add(range, @"mailto:Info@shopon4u.com", Type.Missing, @"mailto:Info@shopon4u.com", Type.Missing);
-                        range.Value2 = logoInfo.Trim().ToUpper() == "NEFT (ICICI)" ? @"Company's TIN/VAT no :- 07706906681" : @"Company's TIN/VAT no :- 07436920749";
+                        newWorkSheet.Hyperlinks.Add(range, @"mailto:" + supportEmail, Type.Missing, @"mailto:" + supportEmail, Type.Missing);
+                        range.Value2 = companyTinNumber;
                         range.Cells.Font.Size = 11;
                         range.Font.Bold = true;
                         range.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Blue);
@@ -357,8 +372,8 @@ namespace InvoiceGenerator
 
                         //email id 
                         range = newWorkSheet.get_Range("A7");
-                        newWorkSheet.Hyperlinks.Add(range, @"mailto:Info@shopon4u.com", Type.Missing, @"mailto:Info@shopon4u.com", Type.Missing);
-                        range.Value2 = @"Info@shopon4u.com";
+                        newWorkSheet.Hyperlinks.Add(range, @"mailto:" + supportEmail, Type.Missing, @"mailto:" + supportEmail, Type.Missing);
+                        range.Value2 = supportEmail;
                         range.Font.Bold = true;
                         range.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
                         range.Cells.Font.Size = 11;
@@ -800,7 +815,7 @@ namespace InvoiceGenerator
                         range.Merge();
                         range.Font.Bold = false;
                         range.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
-                        range.Value2 = string.Format("(3) In Case of any queries, please call our customer care on: {0} or email: info@shopon4u.com",Constants.CustCareNumber);
+                        range.Value2 = string.Format("(3) In Case of any queries, please call our customer care on: {0} or email: {1}", Constants.CustCareNumber, supportEmail);
                         Marshal.FinalReleaseComObject(range);
 
                         //Additional Comments:
@@ -815,7 +830,7 @@ namespace InvoiceGenerator
                         range = newWorkSheet.get_Range("A44", "J44");
                         range.Merge();
                         range.Font.Bold = true;
-                        range.Value2 = "Visit us At : www.shopon4u.com";
+                        range.Value2 = "Visit us At : " + website;
 
                         range.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
                         range.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
@@ -850,8 +865,8 @@ namespace InvoiceGenerator
                         range.Merge();
                         range.Font.Bold = true;
                         range.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
-                        range.Value2 = "www.shopon4u.com";
-                        newWorkSheet.Hyperlinks.Add(range, @"http://www.shopon4u.com/", Type.Missing, "http://www.shopon4u.com/", Type.Missing);
+                        range.Value2 = website;
+                        newWorkSheet.Hyperlinks.Add(range, @"http://" + website, Type.Missing, @"http://" + website, Type.Missing);
                         Marshal.FinalReleaseComObject(range);
                         #endregion
 
@@ -881,17 +896,26 @@ namespace InvoiceGenerator
                 }
                 finally
                 {
-                    excelApp.Quit();
-                    Marshal.ReleaseComObject(excelApp);
-                    try
+                    if(excelApp == null)
                     {
-                        foreach (string invoice in invoices)
-                        {
-                            System.Diagnostics.Process.Start(invoice);
-                        }
-
+                        System.Windows.Forms.MessageBox.Show("No data to process. Either customer name could be empty, column name is invalid or skip is YES in sheet. Make sure that valid data is present.", 
+                            "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
                     }
-                    catch { }
+                    else
+                    {
+                        excelApp.Quit();
+                        Marshal.ReleaseComObject(excelApp);
+                        try
+                        {
+                            foreach (string invoice in invoices)
+                            {
+                                System.Diagnostics.Process.Start(invoice);
+                            }
+
+                        }
+                        catch { }
+                    }
+                    
                 }
                 return invoiceGenerated;
             });

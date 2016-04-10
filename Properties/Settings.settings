@@ -23,5 +23,11 @@
     <Setting Name="CustCareNo" Type="System.String" Scope="User">
       <Value Profile="(Default)"> 0958-222-8289</Value>
     </Setting>
+    <Setting Name="Styleloby" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="StylelobyLogo" Type="System.String" Scope="User">
+      <Value Profile="(Default)">styleloby_Logo.png</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
