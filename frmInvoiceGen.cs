@@ -25,6 +25,7 @@ namespace InvoiceGenerator
             excelDataProvider = new ExcelDataProvider();
             excelDataProvider.OpenExcelFile = excelDataProvider.OpenExcelFile;
             excelDataProvider.UpdateProgress += OnUpdateProgress;
+            SetTitle();
         }
 
         void OnUpdateProgress(object sender, string currentValue)
@@ -174,7 +175,13 @@ namespace InvoiceGenerator
             configForm.BackColor = this.BackColor;
             configForm.StartPosition = FormStartPosition.CenterScreen;
             configForm.ShowDialog();
+            SetTitle();
         }
         
+        public void SetTitle()
+        {
+            string selectedCompany = Constants.IsStyleloby? "Styleloby" : "Shopon";
+            this.Text = string.Format("Invoice generator - {0}", selectedCompany);
+        }
     }
 }
