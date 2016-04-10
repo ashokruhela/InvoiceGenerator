@@ -142,9 +142,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Enabled = false;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(166, 32);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(317, 13);
+            this.label5.Size = new System.Drawing.Size(384, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "This setting will change the comany, Check all the setting properly";
             // 
@@ -164,7 +165,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(509, 320);
+            this.ClientSize = new System.Drawing.Size(560, 320);
             this.ControlBox = false;
             this.Controls.Add(this.chkStylelobyInvoice);
             this.Controls.Add(this.label5);

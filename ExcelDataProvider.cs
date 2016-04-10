@@ -185,6 +185,7 @@ namespace InvoiceGenerator
                 {
                     ApplyFilterCondition(dtTable);
                     string tempValue = string.Empty;
+
                     foreach (DataRow row in dtTable.Rows)
                     {
                         bool isPvtLtd = true;
@@ -885,7 +886,7 @@ namespace InvoiceGenerator
                             string[] temp = outputFilename.Split(new char[] { '\\' });
                             string file = temp[temp.Count() - 1];
                             string currentDate = DateTime.Today.ToString(Constants.FolderNameFormat);
-                            var files = Directory.GetFiles(Path.Combine(Constants.OutputFilePath, currentDate), string.Format("{0}.*", file));
+                            var files = Directory.GetFiles(Path.Combine(Constants.OutputFilePath, DateTime.Today.ToString("MMMM"), currentDate), string.Format("{0}.*", file));
                             if (files.Count() > 0)
                             {
                                 invoices.Add(files[0]);
@@ -1029,12 +1030,13 @@ namespace InvoiceGenerator
         {
             customerName = customerName.Replace(".", string.Empty);
             string currentDate = DateTime.Today.ToString(Constants.FolderNameFormat);
-            string fileName = Path.Combine(Constants.OutputFilePath, currentDate, customerName);
-            if (!Directory.Exists(Path.Combine(Constants.OutputFilePath, currentDate)))
+            string month = DateTime.Today.ToString("MMMM");
+            string fileName = Path.Combine(Constants.OutputFilePath, month, currentDate, customerName);
+            if (!Directory.Exists(Path.Combine(Constants.OutputFilePath, month, currentDate)))
             {
-                Directory.CreateDirectory(Path.Combine(Constants.OutputFilePath, currentDate));
+                Directory.CreateDirectory(Path.Combine(Constants.OutputFilePath, month, currentDate));
             }
-            var files = Directory.GetFiles(Path.Combine(Constants.OutputFilePath, currentDate), string.Format("{0}*", customerName));
+            var files = Directory.GetFiles(Path.Combine(Constants.OutputFilePath, month, currentDate), string.Format("{0}*", customerName));
             fileName = files.Count() == 0 ? fileName : string.Format("{0}_{1}", fileName, (files.Count() + 1).ToString());
 
             if (File.Exists(fileName))
