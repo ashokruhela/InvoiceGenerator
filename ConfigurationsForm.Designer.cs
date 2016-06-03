@@ -40,7 +40,8 @@
             this.txtCustNo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.chkStylelobyInvoice = new System.Windows.Forms.CheckBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbCompany = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnSave
@@ -149,15 +150,23 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "This setting will change the comany, Check all the setting properly";
             // 
-            // chkStylelobyInvoice
+            // label6
             // 
-            this.chkStylelobyInvoice.AutoSize = true;
-            this.chkStylelobyInvoice.Location = new System.Drawing.Point(169, 12);
-            this.chkStylelobyInvoice.Name = "chkStylelobyInvoice";
-            this.chkStylelobyInvoice.Size = new System.Drawing.Size(106, 17);
-            this.chkStylelobyInvoice.TabIndex = 12;
-            this.chkStylelobyInvoice.Text = "Styleloby Invoice";
-            this.chkStylelobyInvoice.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(34, 13);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Company";
+            // 
+            // cmbCompany
+            // 
+            this.cmbCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCompany.FormattingEnabled = true;
+            this.cmbCompany.Location = new System.Drawing.Point(169, 5);
+            this.cmbCompany.Name = "cmbCompany";
+            this.cmbCompany.Size = new System.Drawing.Size(121, 21);
+            this.cmbCompany.TabIndex = 17;
             // 
             // frmConfigurations
             // 
@@ -167,7 +176,8 @@
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(560, 320);
             this.ControlBox = false;
-            this.Controls.Add(this.chkStylelobyInvoice);
+            this.Controls.Add(this.cmbCompany);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtCustNo);
             this.Controls.Add(this.label4);
@@ -203,6 +213,7 @@
         private System.Windows.Forms.TextBox txtCustNo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox chkStylelobyInvoice;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbCompany;
     }
 }

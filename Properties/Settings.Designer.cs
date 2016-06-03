@@ -109,18 +109,6 @@ namespace InvoiceGenerator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool Styleloby {
-            get {
-                return ((bool)(this["Styleloby"]));
-            }
-            set {
-                this["Styleloby"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("styleloby_Logo.png")]
         public string StylelobyLogo {
             get {
@@ -128,6 +116,30 @@ namespace InvoiceGenerator.Properties {
             }
             set {
                 this["StylelobyLogo"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("crusebeen_logo.png")]
+        public string CrusebeenLogo {
+            get {
+                return ((string)(this["CrusebeenLogo"]));
+            }
+            set {
+                this["CrusebeenLogo"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("SHOPON4U")]
+        public string Company {
+            get {
+                return ((string)(this["Company"]));
+            }
+            set {
+                this["Company"] = value;
             }
         }
     }

@@ -39,14 +39,16 @@ namespace InvoiceGenerator
         public static string Shopon_P = string.Empty;
         public static string Shopon_M = string.Empty;
         public static string StylelobyLogo = "styleloby_Logo.png";
-        public static bool IsStyleloby = false;
+        public static string CrusebeenLogo = "crusebeen_Logo.png";
+        public static Company CompanyName = Company.SHOPON4U;
 
         static Constants()
         {
             Shopon_P = Environment.CurrentDirectory + "\\images\\" + Properties.Settings.Default.Shopon_P;
             Shopon_M = Environment.CurrentDirectory + "\\images\\" + Properties.Settings.Default.Shopon_M;
             StylelobyLogo = Environment.CurrentDirectory + "\\images\\" + Properties.Settings.Default.StylelobyLogo;
-            
+            CrusebeenLogo = Environment.CurrentDirectory + "\\images\\" + Properties.Settings.Default.CrusebeenLogo;
+
             LoadSettings();
         }
 
@@ -57,7 +59,7 @@ namespace InvoiceGenerator
             FolderNameFormat = Properties.Settings.Default.FolderNameFormat;
             ContestName = Properties.Settings.Default.ContestName;
             CustCareNumber = Properties.Settings.Default.CustCareNo;
-            IsStyleloby = Properties.Settings.Default.Styleloby;
+            CompanyName = (Company) Enum.Parse(typeof(Company), Properties.Settings.Default.Company, false);
         }
         
     }

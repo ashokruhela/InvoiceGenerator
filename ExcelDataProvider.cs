@@ -186,6 +186,8 @@ namespace InvoiceGenerator
                     ApplyFilterCondition(dtTable);
                     string tempValue = string.Empty;
 
+                    CompanyInfo company = new CompanyInfo(Company.SHOPON4U);
+
                     foreach (DataRow row in dtTable.Rows)
                     {
                         bool isPvtLtd = true;
@@ -307,7 +309,17 @@ namespace InvoiceGenerator
                         range = newWorkSheet.get_Range("A3");
                         try
                         {
-                            if(Constants.IsStyleloby)
+                            if(Constants.CompanyName == Company.CRUSEBEEN)
+                            {
+                                //crusebeen
+                                companyTinNumber = @"Company's TIN/VAT no :- 07427117223";
+                                supportEmail = @"support@crusebeen.com";
+                                website = "www.crusebeen.com";
+                                isPvtLtd = true;
+                                range.Value2 = "Crusebeen Enterprises";
+                                newWorkSheet.Shapes.AddPicture(Constants.CrusebeenLogo, MsoTriState.msoFalse, MsoTriState.msoCTrue, 230, 40, 180, 50);
+                            }
+                            else if(Constants.CompanyName == Company.STYELOBY)
                             {
                                 //styleloby
                                 companyTinNumber = @"Company's TIN/VAT no :- 07606952779";

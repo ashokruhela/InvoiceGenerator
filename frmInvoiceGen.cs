@@ -180,8 +180,7 @@ namespace InvoiceGenerator
         
         public void SetTitle()
         {
-            string selectedCompany = Constants.IsStyleloby? "Styleloby" : "Shopon";
-            this.Text = string.Format("Invoice generator - {0}", selectedCompany);
+            this.Text = string.Format("Invoice generator - {0}", Constants.CompanyName.ToString());
         }
     }
 }

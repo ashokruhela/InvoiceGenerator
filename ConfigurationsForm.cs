@@ -15,13 +15,15 @@ namespace InvoiceGenerator
         public frmConfigurations()
         {
             InitializeComponent();
-            chkStylelobyInvoice.CheckedChanged -= chkStylelobyInvoice_CheckedChanged;
+            cmbCompany.SelectedIndexChanged -= OnCompanyChanged;
             txtOutputPath.Text = Properties.Settings.Default.OutputPath;
             txtFormat.Text = Properties.Settings.Default.FolderNameFormat;
             txtContest.Text = Properties.Settings.Default.ContestName;
             txtCustNo.Text = Properties.Settings.Default.CustCareNo;
-            chkStylelobyInvoice.Checked = Properties.Settings.Default.Styleloby;
-            chkStylelobyInvoice.CheckedChanged += chkStylelobyInvoice_CheckedChanged;
+            cmbCompany.DataSource = Enum.GetNames(typeof(Company));
+            cmbCompany.SelectedItem = Properties.Settings.Default.Company;
+            cmbCompany.SelectedIndexChanged += OnCompanyChanged;
+
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -44,7 +46,7 @@ namespace InvoiceGenerator
                     Properties.Settings.Default.FolderNameFormat = txtFormat.Text.Trim();
                     Properties.Settings.Default.ContestName = txtContest.Text.Trim();
                     Properties.Settings.Default.CustCareNo = txtCustNo.Text.Trim();
-                    Properties.Settings.Default.Styleloby = chkStylelobyInvoice.Checked;
+                    Properties.Settings.Default.Company = cmbCompany.SelectedItem.ToString();
 
                     Properties.Settings.Default.Save();
                     Constants.LoadSettings();
@@ -87,7 +89,7 @@ namespace InvoiceGenerator
             return errorMessage.Length == 0;
         }
 
-        private void chkStylelobyInvoice_CheckedChanged(object sender, EventArgs e)
+        private void OnCompanyChanged(object sender, EventArgs e)
         {
             MessageBox.Show("You are changing the company. Make sure that all settings like customer care number, logo etc are correct.", 
                 this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
