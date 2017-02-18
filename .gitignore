@@ -1,0 +1,4 @@
+obj/
+bin/debug/
+bin/debug/InvoiceGenerator.pdb
+.vs/
