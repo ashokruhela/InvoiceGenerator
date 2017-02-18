@@ -1,2 +1,0 @@
-D:\repos\InvoiceGenerator\bin\Debug\InvoiceGenerator.exe.config
-D:\repos\InvoiceGenerator\obj\Debug\InvoiceGenerator.csproj.ResolveComReference.cache
