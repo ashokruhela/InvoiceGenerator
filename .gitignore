@@ -1,4 +1,4 @@
 obj/
 bin/debug/
-bin/debug/InvoiceGenerator.pdb
+bin/Release/InvoiceGenerator.pdb
 .vs/
