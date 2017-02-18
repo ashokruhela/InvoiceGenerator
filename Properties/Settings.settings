@@ -30,7 +30,7 @@
       <Value Profile="(Default)">crusebeen_logo.png</Value>
     </Setting>
     <Setting Name="Company" Type="System.String" Scope="User">
-      <Value Profile="(Default)">SHOPON4U</Value>
+      <Value Profile="(Default)">STYELOBY</Value>
     </Setting>
   </Settings>
 </SettingsFile>

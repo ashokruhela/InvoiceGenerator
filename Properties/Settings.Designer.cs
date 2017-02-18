@@ -133,7 +133,7 @@ namespace InvoiceGenerator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("SHOPON4U")]
+        [global::System.Configuration.DefaultSettingValueAttribute("STYELOBY")]
         public string Company {
             get {
                 return ((string)(this["Company"]));

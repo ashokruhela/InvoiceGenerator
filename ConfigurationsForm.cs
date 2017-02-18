@@ -76,8 +76,8 @@ namespace InvoiceGenerator
                     errorMessage = "Output path cannot be empty";
                 if (string.IsNullOrEmpty(txtFormat.Text.Trim()))
                     errorMessage = "Folder name format cannot be empty";
-                if (!DateTime.TryParse(tempDt.ToString(txtFormat.Text.Trim()), out tempDt))
-                    errorMessage = "Folder name format is not valid";
+                //if (!DateTime.TryParse(tempDt.ToString(txtFormat.Text.Trim()), out tempDt))
+                //    errorMessage = "Folder name format is not valid";
                 if (string.IsNullOrEmpty(txtCustNo.Text.Trim()))
                     errorMessage = "Custmor care number cannot be empty";
             }

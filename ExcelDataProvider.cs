@@ -422,22 +422,22 @@ namespace InvoiceGenerator
                         #endregion
 
                         #region Reference No:
-                        if (isPvtLtd)
-                        {
-                            range = newWorkSheet.get_Range("I4");
-                            range.Value2 = "Reference No:";
-                            range.Font.Bold = true;
-                            range.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
-                            range.Cells.Font.Size = 11;
-                            Marshal.FinalReleaseComObject(range);
-                            //value
-                            range = newWorkSheet.get_Range("J4");
-                            range.Value2 = GetColumnValue(row, Constants.RefNo);
-                            range.Font.Bold = false;
-                            range.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
-                            range.Cells.Font.Size = 11;
-                            Marshal.FinalReleaseComObject(range);
-                        }
+                        //if (isPvtLtd)
+                        //{
+                        //    range = newWorkSheet.get_Range("I4");
+                        //    range.Value2 = "Reference No:";
+                        //    range.Font.Bold = true;
+                        //    range.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
+                        //    range.Cells.Font.Size = 11;
+                        //    Marshal.FinalReleaseComObject(range);
+                        //    //value
+                        //    range = newWorkSheet.get_Range("J4");
+                        //    range.Value2 = GetColumnValue(row, Constants.RefNo);
+                        //    range.Font.Bold = false;
+                        //    range.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
+                        //    range.Cells.Font.Size = 11;
+                        //    Marshal.FinalReleaseComObject(range);
+                        //}
                         #endregion
 
                         #region Invoice number
@@ -957,7 +957,7 @@ namespace InvoiceGenerator
 
                 string orderID = mainRowValues[Constants.OrderID];
                 string invoiceNo = mainRowValues[Constants.InvoiceNo];
-                string refNo = mainRowValues[Constants.RefNo];
+                //string refNo = mainRowValues[Constants.RefNo];
                 string products = string.Empty;
                 string newProducts = products = mainRowValues[Constants.Products];
                 double totalPrice = Convert.ToDouble(GetColumnValue(row, Constants.OrderValue));
@@ -972,23 +972,24 @@ namespace InvoiceGenerator
                         string othercustID = otherRowValues[Constants.CustomerID];
                         string otherorderID = otherRowValues[Constants.OrderID];
                         string otherinvoiceNo = otherRowValues[Constants.InvoiceNo];
-                        string otherrefNo = otherRowValues[Constants.RefNo];
+                        //string otherrefNo = otherRowValues[Constants.RefNo];
                         string otherProducts = otherRowValues[Constants.Products];
 
-                        if (condition == 1 && custID == othercustID && orderID == otherorderID && invoiceNo == otherinvoiceNo && refNo == otherrefNo)
+                        //if (condition == 1 && custID == othercustID && orderID == otherorderID && invoiceNo == otherinvoiceNo && refNo == otherrefNo)
+                        //{
+                        //    newProducts = string.Join("+", newProducts, otherProducts);
+                        //    totalPrice += Convert.ToDouble(GetColumnValue(otherRow, Constants.OrderValue));
+                        //    SetColumnValue(row, Constants.Products, newProducts);
+                        //    SetColumnValue(otherRow, Constants.Skip, "Yes");
+                        //    SetColumnValue(row, Constants.OrderValue, totalPrice.ToString());
+                        //}
+                        //else 
+                        if (condition == 2 && custID == othercustID && invoiceNo == otherinvoiceNo)
                         {
                             newProducts = string.Join("+", newProducts, otherProducts);
                             totalPrice += Convert.ToDouble(GetColumnValue(otherRow, Constants.OrderValue));
-                            SetColumnValue(row, Constants.Products, newProducts);
-                            SetColumnValue(otherRow, Constants.Skip, "Yes");
-                            SetColumnValue(row, Constants.OrderValue, totalPrice.ToString());
-                        }
-                        else if (condition == 2 && custID == othercustID && invoiceNo == otherinvoiceNo)
-                        {
-                            newProducts = string.Join("+", newProducts, otherProducts);
-                            totalPrice += Convert.ToDouble(GetColumnValue(otherRow, Constants.OrderValue));
-                            string lastDigits = otherorderID.Substring(otherorderID.Length - 5, 5);
-                            newOrderID = string.Join("/", newOrderID, lastDigits);
+                            //string lastDigits = otherorderID.Substring(otherorderID.Length - 5, 5);
+                            newOrderID = string.Join("/", newOrderID, otherorderID);
                             SetColumnValue(otherRow, Constants.Skip, "Yes");
                             SetColumnValue(row, Constants.Products, newProducts);
                             SetColumnValue(row, Constants.OrderValue, totalPrice.ToString());
@@ -1078,5 +1079,7 @@ namespace InvoiceGenerator
             }
             return products.ToString();
         }
+
+
     }
 }

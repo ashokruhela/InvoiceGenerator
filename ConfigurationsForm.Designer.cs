@@ -162,6 +162,7 @@
             // cmbCompany
             // 
             this.cmbCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCompany.Enabled = false;
             this.cmbCompany.FormattingEnabled = true;
             this.cmbCompany.Location = new System.Drawing.Point(169, 5);
             this.cmbCompany.Name = "cmbCompany";
