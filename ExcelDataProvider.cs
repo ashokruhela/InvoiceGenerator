@@ -322,7 +322,7 @@ namespace InvoiceGenerator
                             else if(Constants.CompanyName == Company.STYELOBY)
                             {
                                 //styleloby
-                                companyTinNumber = @"Company's TIN/VAT no :- 07606952779";
+                                companyTinNumber = @"Company's GSTIN no :- 07AAKFJ6472H1Z1";
                                 supportEmail = @"info@styleloby.com";
                                 website = "www.styleloby.com";
                                 isPvtLtd = true;
